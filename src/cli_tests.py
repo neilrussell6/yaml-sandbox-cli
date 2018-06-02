@@ -1,7 +1,8 @@
 """Tests for cli"""
+from click.testing import CliRunner
+
 from src.cli import say
 
-from click.testing import CliRunner
 
 def test_say_command_echos_goodbye_world():
     """Should echo Goodbye World."""
