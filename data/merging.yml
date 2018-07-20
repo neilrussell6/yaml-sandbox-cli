@@ -1,0 +1,26 @@
+default-person: &default-person
+  country:
+    lat: 20
+    lon: -10
+    timezone: 'Asia/Dubai'
+  is_active: true
+  region: 1
+
+people:
+  - <<: *default-person
+    name: 'John'
+    suranme: 'Smith'
+    age: 37
+    friends:
+      - 'Jane'
+      - 'Abigale'
+      - 'Mortimer'
+    region: 2 # overrides
+  - name: 'Jane'
+    suranme: 'Smith'
+    age: 35
+    friends:
+      - 'John'
+      - 'Marry'
+    region: 3 # still overrides
+    <<: *default-person

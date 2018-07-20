@@ -1,9 +1,12 @@
 """Command line interface for ???."""
 
 import logging
+from pprint import pprint
 
 import click
 import click_log
+
+from src.common.yaml_utils import parse_yaml
 
 logger = logging.getLogger(__name__)
 click_log.basic_config(logger)
@@ -18,20 +21,13 @@ def cli():
 @cli.command()
 @click_log.simple_verbosity_option(logger)
 @click.option(
-    '--what',
-    prompt='What do you want to say?',
-    help='Thing to say.',
-    default='Hello',
+    '--file',
+    help='YAML file to parse',
 )
-@click.option(
-    '--who',
-    prompt='Who do you want to say it to?',
-    help='Who to say it to.',
-    default='World',
-)
-def say(**kwargs):
-    """Example command."""
-    click.echo('{} {}'.format(kwargs['what'], kwargs['who']))
+def parse(**kwargs):
+    """Parse provided YAML file."""
+    result = parse_yaml(kwargs['file'])
+    pprint(result)
 
 
 if __name__ == '__main__':

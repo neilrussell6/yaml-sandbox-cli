@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='myapp',
+    name='yaml-sandbox-cli',
     version='0.1',
     py_modules=['src'],
     install_requires=[
@@ -9,6 +9,6 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        myapp=src.cli:cli
+        yaml-sandbox-cli=src.cli:cli
     ''',
 )

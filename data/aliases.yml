@@ -1,0 +1,23 @@
+default-country: &default-country
+ lat: 20
+ lon: -10
+ timezone: 'Asia/Dubai'
+
+people:
+ - name: 'John'
+   suranme: 'Smith'
+   age: 37
+   is_active: true
+   friends:
+    - 'Jane'
+    - 'Abigale'
+    - 'Mortimer'
+   country: *default-country
+ - name: 'Jane'
+   suranme: 'Smith'
+   age: 35
+   is_active: true
+   friends:
+    - 'John'
+    - 'Marry'
+   country: *default-country

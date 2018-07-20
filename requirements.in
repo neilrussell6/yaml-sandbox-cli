@@ -11,6 +11,7 @@ pytest-sugar
 # data
 factory_boy
 pytest-factoryboy
+pyyaml
 
 # linting
 flake8==3.3.0  # flake8-print compatibility

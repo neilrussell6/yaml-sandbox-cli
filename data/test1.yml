@@ -1,0 +1,12 @@
+name: 'John'
+suranme: 'Smith'
+age: 37
+is_active: true
+friends:
+ - 'Jane'
+ - 'Abigale'
+ - 'Mortimer'
+country:
+ lat: 20
+ lon: -10
+ timezone: 'Asia/Dubai'
