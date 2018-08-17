@@ -39,34 +39,18 @@ help:
 #------------------------------
 
 .PHONY: init
-init: initprint copyenv renameapp initpip pipcompile pipinstall install
+init: initprint copyenv initpip pipcompile pipinstall install
 	@$(call print_h1,"... success")
 
 .PHONY: initprint
 initprint:
-ifeq (,$(name))
-	$(error no app name provided please provide like this: $$ make init name='my-app')
-else
 	@$(call print_h1,"initializating ...")
-endif
 
 .PHONY: copyenv
 copyenv:
 ifeq (,$(wildcard '.env'))
 	@$(call print_h2,"creating env file")
 	@cp .env.local .env
-endif
-
-.PHONY: renameapp
-renameapp:
-ifeq (,$(name))
-	$(error no app name provided please provide like this: $$ make init name='my-app')
-else
-	@$(call print_h2,"replacing occurrences of app name")
-	@sed -i -e 's/myapp/$(name)/g' README.md $(SOURCE_DIR)/$(ENTRY_POINT).py \
-	| echo $(name) \
-	| $(STR_TO_LOWERDASH) \
-	| { read newname; sed -i -e s/myapp/$$newname/g setup.py .env; }
 endif
 
 .PHONY: initpip

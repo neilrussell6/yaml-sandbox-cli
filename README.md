@@ -26,6 +26,7 @@ alias activate="source venv/bin/activate/"
 yaml-sandbox-cli parse --file data/aliases.yml
 yaml-sandbox-cli parse --file data/merging.yml
 yaml-sandbox-cli parse --file data/test1.yml
+yaml-sandbox-cli parse --file data/env-vars.yml
 ```
 
 testing
